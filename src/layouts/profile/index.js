@@ -39,11 +39,287 @@ import DefaultProjectCard from "examples/Cards/ProjectCards/DefaultProjectCard";
 import Footer from "examples/Footer";
 // Vision UI Dashboard React example components
 import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
+import Table from "examples/Tables/Table";
 // Overview page components
 import Header from "layouts/profile/components/Header";
 import PlatformSettings from "layouts/profile/components/PlatformSettings";
 import Welcome from "../profile/components/Welcome/index";
 import CarInformations from "./components/CarInformations";
+// Import icons
+import Spotify from "examples/Icons/Spotify";
+import Invision from "examples/Icons/Invision";
+import Jira from "examples/Icons/Jira";
+import Slack from "examples/Icons/Slack";
+import VuiProgress from "components/VuiProgress";
+import VuiAvatar from "components/VuiAvatar";
+import Tooltip from "@mui/material/Tooltip";
+
+// Data for the projects table
+const projectsTableData = {
+  columns: [
+    { name: "Companies", align: "left" },
+    { name: "members", align: "left" },
+    { name: "PAID", align: "center" },
+    { name: "completion", align: "center" },
+  ],
+  rows: [
+    {
+      TOPIC: (
+        <VuiBox display="flex" alignItems="center">
+          <Spotify size="20px" />
+          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            Spotify Project
+          </VuiTypography>
+        </VuiBox>
+      ),
+      members: (
+        <VuiBox display="flex" py={1}>
+          {[
+            [team1, "Elena Morison"],
+            [team2, "Ryan Milly"],
+          ].map(([image, name]) => (
+            <Tooltip key={name} title={name} placeholder="bottom">
+              <VuiAvatar
+                src={image}
+                alt="name"
+                size="xs"
+                sx={{
+                  border: ({ borders: { borderWidth }, palette: { dark } }) =>
+                    `${borderWidth[2]} solid ${dark.focus}`,
+                  cursor: "pointer",
+                  position: "relative",
+                  "&:not(:first-of-type)": {
+                    ml: -1.25,
+                  },
+                  "&:hover, &:focus": {
+                    zIndex: "10",
+                  },
+                }}
+              />
+            </Tooltip>
+          ))}
+        </VuiBox>
+      ),
+      PAID: (
+        <VuiTypography variant="button" color="white" fontWeight="bold">
+          $14,000
+        </VuiTypography>
+      ),
+      completion: (
+        <VuiBox width="8rem" textAlign="left">
+          <VuiTypography color="white" variant="button" fontWeight="bold">
+            60%
+          </VuiTypography>
+          <VuiProgress value={60} color="info" label={false} sx={{ background: "#2D2E5F" }} />
+        </VuiBox>
+      ),
+    },
+    {
+      TOPIC: (
+        <VuiBox display="flex" alignItems="center">
+          <Invision size="20px" />
+          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            Invision Project
+          </VuiTypography>
+        </VuiBox>
+      ),
+      members: (
+        <VuiBox display="flex" py={1}>
+          {[
+            [team3, "Nick Daniel"],
+            [team4, "Peterson"],
+          ].map(([image, name]) => (
+            <Tooltip key={name} title={name} placeholder="bottom">
+              <VuiAvatar
+                src={image}
+                alt="name"
+                size="xs"
+                sx={{
+                  border: ({ borders: { borderWidth }, palette: { dark } }) =>
+                    `${borderWidth[2]} solid ${dark.focus}`,
+                  cursor: "pointer",
+                  position: "relative",
+                  "&:not(:first-of-type)": {
+                    ml: -1.25,
+                  },
+                  "&:hover, &:focus": {
+                    zIndex: "10",
+                  },
+                }}
+              />
+            </Tooltip>
+          ))}
+        </VuiBox>
+      ),
+      PAID: (
+        <VuiTypography variant="button" color="white" fontWeight="bold">
+          $2,500
+        </VuiTypography>
+      ),
+      completion: (
+        <VuiBox width="8rem" textAlign="left">
+          <VuiTypography color="white" variant="button" fontWeight="bold">
+            90%
+          </VuiTypography>
+          <VuiProgress value={90} color="info" label={false} sx={{ background: "#2D2E5F" }} />
+        </VuiBox>
+      ),
+    },
+    {
+      TOPIC: (
+        <VuiBox display="flex" alignItems="center">
+          <Jira size="20px" />
+          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            Jira Project
+          </VuiTypography>
+        </VuiBox>
+      ),
+      members: (
+        <VuiBox display="flex" py={1}>
+          {[
+            [team1, "Elena Morison"],
+            [team2, "Ryan Milly"],
+          ].map(([image, name]) => (
+            <Tooltip key={name} title={name} placeholder="bottom">
+              <VuiAvatar
+                src={image}
+                alt="name"
+                size="xs"
+                sx={{
+                  border: ({ borders: { borderWidth }, palette: { dark } }) =>
+                    `${borderWidth[2]} solid ${dark.focus}`,
+                  cursor: "pointer",
+                  position: "relative",
+                  "&:not(:first-of-type)": {
+                    ml: -1.25,
+                  },
+                  "&:hover, &:focus": {
+                    zIndex: "10",
+                  },
+                }}
+              />
+            </Tooltip>
+          ))}
+        </VuiBox>
+      ),
+      PAID: (
+        <VuiTypography variant="button" color="white" fontWeight="bold">
+          Not set
+        </VuiTypography>
+      ),
+      completion: (
+        <VuiBox width="8rem" textAlign="left">
+          <VuiTypography color="white" variant="button" fontWeight="bold">
+            25%
+          </VuiTypography>
+          <VuiProgress value={25} color="info" label={false} sx={{ background: "#2D2E5F" }} />
+        </VuiBox>
+      ),
+    },
+    {
+      TOPIC: (
+        <VuiBox display="flex" alignItems="center">
+          <Slack size="20px" />
+          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            Slack Project
+          </VuiTypography>
+        </VuiBox>
+      ),
+      members: (
+        <VuiBox display="flex" py={1}>
+          {[
+            [team3, "Nick Daniel"],
+            [team4, "Peterson"],
+          ].map(([image, name]) => (
+            <Tooltip key={name} title={name} placeholder="bottom">
+              <VuiAvatar
+                src={image}
+                alt="name"
+                size="xs"
+                sx={{
+                  border: ({ borders: { borderWidth }, palette: { dark } }) =>
+                    `${borderWidth[2]} solid ${dark.focus}`,
+                  cursor: "pointer",
+                  position: "relative",
+                  "&:not(:first-of-type)": {
+                    ml: -1.25,
+                  },
+                  "&:hover, &:focus": {
+                    zIndex: "10",
+                  },
+                }}
+              />
+            </Tooltip>
+          ))}
+        </VuiBox>
+      ),
+      PAID: (
+        <VuiTypography variant="button" color="white" fontWeight="bold">
+          $4,000
+        </VuiTypography>
+      ),
+      completion: (
+        <VuiBox width="8rem" textAlign="left">
+          <VuiTypography color="white" variant="button" fontWeight="bold">
+            40%
+          </VuiTypography>
+          <VuiProgress value={40} color="info" label={false} sx={{ background: "#2D2E5F" }} />
+        </VuiBox>
+      ),
+    },
+    {
+      TOPIC: (
+        <VuiBox display="flex" alignItems="center">
+          <Spotify size="20px" />
+          <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
+            Webdev Project
+          </VuiTypography>
+        </VuiBox>
+      ),
+      members: (
+        <VuiBox display="flex" py={1}>
+          {[
+            [team1, "Elena Morison"],
+            [team2, "Ryan Milly"],
+          ].map(([image, name]) => (
+            <Tooltip key={name} title={name} placeholder="bottom">
+              <VuiAvatar
+                src={image}
+                alt="name"
+                size="xs"
+                sx={{
+                  border: ({ borders: { borderWidth }, palette: { dark } }) =>
+                    `${borderWidth[2]} solid ${dark.focus}`,
+                  cursor: "pointer",
+                  position: "relative",
+                  "&:not(:first-of-type)": {
+                    ml: -1.25,
+                  },
+                  "&:hover, &:focus": {
+                    zIndex: "10",
+                  },
+                }}
+              />
+            </Tooltip>
+          ))}
+        </VuiBox>
+      ),
+      PAID: (
+        <VuiTypography variant="button" color="white" fontWeight="bold">
+          $2,000
+        </VuiTypography>
+      ),
+      completion: (
+        <VuiBox width="8rem" textAlign="left">
+          <VuiTypography color="white" variant="button" fontWeight="bold">
+            100%
+          </VuiTypography>
+          <VuiProgress value={100} color="info" label={false} sx={{ background: "#2D2E5F" }} />
+        </VuiBox>
+      ),
+    },
+  ],
+};
 
 function Overview() {
   return (
@@ -99,9 +375,9 @@ function Overview() {
           >
             <ProfileInfoCard
               title="profile information"
-              description="Hi, I’m Mark Johnson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
+              description="Hi, I'm Emily Polak, Decisions: If you can't decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
               info={{
-                fullName: "Mark Johnson",
+                fullName: "Emily Polak",
                 mobile: "(44) 123 1234 123",
                 email: "mark@simmmple.com",
                 location: "United States",
@@ -136,11 +412,14 @@ function Overview() {
             <VuiBox display="flex" flexDirection="column" height="100%">
               <VuiBox display="flex" flexDirection="column" mb="24px">
                 <VuiTypography color="white" variant="lg" fontWeight="bold" mb="6px">
-                  Projects
+                  Partners
                 </VuiTypography>
                 <VuiTypography color="text" variant="button" fontWeight="regular">
-                  Architects design houses
+                  30 done this month
                 </VuiTypography>
+              </VuiBox>
+              <VuiBox mb={3}>
+                <Table columns={projectsTableData.columns} rows={projectsTableData.rows} />
               </VuiBox>
               <Grid container spacing={3}>
                 <Grid item xs={12} md={6} xl={4}>

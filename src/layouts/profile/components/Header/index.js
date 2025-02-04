@@ -127,7 +127,7 @@ function Header() {
               })}
             >
               <VuiTypography variant="lg" color="white" fontWeight="bold">
-                Mark Johnson
+                Emily Polak
               </VuiTypography>
               <VuiTypography variant="button" color="text" fontWeight="regular">
                 mark@simmmple.com

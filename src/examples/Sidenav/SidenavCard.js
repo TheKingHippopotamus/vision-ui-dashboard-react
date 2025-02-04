@@ -28,7 +28,7 @@ import VuiBox from "components/VuiBox";
 import VuiTypography from "components/VuiTypography";
 
 // Custom styles for the SidenavCard
-import { card, cardContent, cardIconBox, cardIcon } from "examples/Sidenav/styles/sidenavCard";
+import { card, cardContent } from "examples/Sidenav/styles/sidenavCard";
 
 // Vision UI Dashboard React context
 import { useVisionUIController } from "context";
@@ -40,31 +40,20 @@ function SidenavCard({ color, ...rest }) {
   return (
     <Card sx={(theme) => card(theme, { miniSidenav })}>
       <CardContent sx={(theme) => cardContent(theme, { sidenavColor })}>
-        <VuiBox
-          bgColor="white"
-          width="2rem"
-          height="2rem"
-          borderRadius="md"
-          shadow="md"
-          mb={2}
-          sx={cardIconBox}
-        >
-          <Icon fontSize="medium" sx={(theme) => cardIcon(theme, { color })}>
-            star
-          </Icon>
-        </VuiBox>
+
+    
         <VuiBox lineHeight={1}>
-          <VuiTypography variant="h6" color="white">
-            Need help?
-          </VuiTypography>
-          <VuiBox mb={1.825} mt={-1}>
-            <VuiTypography variant="caption" color="white" fontWeight="regular">
-              Please check our docs
+          <VuiTypography  mt={+2} variant="h6" color="white" fontWeight="bold"> 
+            TwinnieAI 
+                      </VuiTypography>
+          <VuiBox mb={0} mt={+2}>
+            <VuiTypography variant="h6" color="white" fontWeight="bold">
+              Check this out now !!
             </VuiTypography>
           </VuiBox>
           <VuiButton
             component={Link}
-            href="https://www.creative-tim.com/learning-lab/react/quick-start/vision-ui-dashboard/"
+            href=""
             target="_blank"
             rel="noreferrer"
             size="small"
@@ -86,7 +75,7 @@ function SidenavCard({ color, ...rest }) {
             })}
             fullWidth
           >
-            DOCUMENTATION
+            Discover
           </VuiButton>
         </VuiBox>
       </CardContent>

@@ -439,5 +439,3 @@ Instagram: <https://www.instagram.com/simmmple.web>
 
 
 
-# TwinnieAi
-

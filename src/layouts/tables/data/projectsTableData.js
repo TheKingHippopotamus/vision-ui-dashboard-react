@@ -61,7 +61,7 @@ const action = (
 export default {
   columns: [
     { name: "project", align: "left" },
-    { name: "budget", align: "left" },
+    { name: "PAID", align: "left" },
     { name: "status", align: "left" },
     { name: "completion", align: "center" },
     { name: "action", align: "center" },
@@ -77,7 +77,7 @@ export default {
           </VuiTypography>
         </VuiBox>
       ),
-      budget: (
+      PAID: (
         <VuiTypography variant="button" color="white" fontWeight="medium">
           $14,000
         </VuiTypography>
@@ -99,7 +99,7 @@ export default {
           </VuiTypography>
         </VuiBox>
       ),
-      budget: (
+      PAID: (
         <VuiTypography variant="button" color="white" fontWeight="medium">
           $3,000
         </VuiTypography>
@@ -121,7 +121,7 @@ export default {
           </VuiTypography>
         </VuiBox>
       ),
-      budget: (
+      PAID: (
         <VuiTypography variant="button" color="white" fontWeight="medium">
           Not set
         </VuiTypography>
@@ -143,7 +143,7 @@ export default {
           </VuiTypography>
         </VuiBox>
       ),
-      budget: (
+      PAID: (
         <VuiTypography variant="button" color="white" fontWeight="medium">
           $32,000
         </VuiTypography>
@@ -165,7 +165,7 @@ export default {
           </VuiTypography>
         </VuiBox>
       ),
-      budget: (
+      PAID: (
         <VuiTypography variant="button" color="white" fontWeight="medium">
           $2,300
         </VuiTypography>

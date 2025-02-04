@@ -1,3 +1,5 @@
+
+
 // @mui material components
 import Tooltip from "@mui/material/Tooltip";
 
@@ -47,19 +49,19 @@ export default function data() {
 
   return {
     columns: [
-      { name: "companies", align: "left" },
+      { name: "COMPANIES", align: "left" },
       { name: "members", align: "left" },
-      { name: "budget", align: "center" },
+      { name: "PAID", align: "center" },
       { name: "completion", align: "center" },
     ],
 
     rows: [
       {
-        companies: (
+        COMPANIES: (
           <VuiBox display="flex" alignItems="center">
             <AdobeXD size="20px" />
             <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-              Chakra Vision UI Version
+            Microsoft Corp.
             </VuiTypography>
           </VuiBox>
         ),
@@ -73,7 +75,7 @@ export default function data() {
             ])}
           </VuiBox>
         ),
-        budget: (
+        PAID: (
           <VuiTypography variant="button" color="white" fontWeight="bold">
             $14,000
           </VuiTypography>
@@ -88,11 +90,11 @@ export default function data() {
         ),
       },
       {
-        companies: (
+        COMPANIES: (
           <VuiBox display="flex" alignItems="center">
             <Atlassian size="20px" />
             <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-              Add Progress Track
+            Amazon.com Inc.
             </VuiTypography>
           </VuiBox>
         ),
@@ -104,7 +106,7 @@ export default function data() {
             ])}
           </VuiBox>
         ),
-        budget: (
+        PAID: (
           <VuiTypography variant="button" color="white" fontWeight="bold">
             $3,000
           </VuiTypography>
@@ -119,11 +121,11 @@ export default function data() {
         ),
       },
       {
-        companies: (
+        COMPANIES: (
           <VuiBox display="flex" alignItems="center">
             <Slack size="20px" />
             <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-              Fix Platform Errors
+            Meta Platforms Inc
             </VuiTypography>
           </VuiBox>
         ),
@@ -135,7 +137,7 @@ export default function data() {
             ])}
           </VuiBox>
         ),
-        budget: (
+        PAID: (
           <VuiTypography variant="button" color="white" fontWeight="bold">
             Not set
           </VuiTypography>
@@ -150,11 +152,11 @@ export default function data() {
         ),
       },
       {
-        companies: (
+        COMPANIES: (
           <VuiBox display="flex" alignItems="center">
             <Spotify size="20px" />
             <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-              Launch our Mobile App
+             Spotify Inc.
             </VuiTypography>
           </VuiBox>
         ),
@@ -168,7 +170,7 @@ export default function data() {
             ])}
           </VuiBox>
         ),
-        budget: (
+        PAID: (
           <VuiTypography variant="button" color="white" fontWeight="bold">
             $20,500
           </VuiTypography>
@@ -183,11 +185,11 @@ export default function data() {
         ),
       },
       {
-        companies: (
+        COMPANIES: (
           <VuiBox display="flex" alignItems="center">
             <Jira size="20px" />
             <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-              Add the New Pricing Page
+            Apple Inc. 
             </VuiTypography>
           </VuiBox>
         ),
@@ -196,7 +198,7 @@ export default function data() {
             {avatars([[avatar4, "Jessica Doe"]])}
           </VuiBox>
         ),
-        budget: (
+        PAID: (
           <VuiTypography variant="button" color="white" fontWeight="bold">
             $500
           </VuiTypography>
@@ -211,11 +213,11 @@ export default function data() {
         ),
       },
       {
-        companies: (
+        COMPANIES: (
           <VuiBox display="flex" alignItems="center">
             <Invision size="20px" />
             <VuiTypography pl="16px" color="white" variant="button" fontWeight="medium">
-              Redesign New Online Shop
+            Google Inc.
             </VuiTypography>
           </VuiBox>
         ),
@@ -227,7 +229,7 @@ export default function data() {
             ])}
           </VuiBox>
         ),
-        budget: (
+        PAID: (
           <VuiTypography variant="button" color="white" fontWeight="bold">
             $2,000
           </VuiTypography>

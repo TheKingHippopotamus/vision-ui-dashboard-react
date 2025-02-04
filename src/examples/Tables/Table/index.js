@@ -17,6 +17,7 @@
 */
 
 import { useMemo } from "react";
+import React from "react";
 
 // prop-types is a library for typechecking of props
 import PropTypes from "prop-types";
@@ -137,7 +138,7 @@ function Table({ columns = [], rows = [{}] }) {
           </VuiBox>
         );
       } else if (Array.isArray(cellData)) {
-        // Safely handle array data with defaults
+        // Handle array data
         const [avatarSrc = null, avatarName = ''] = cellData;
         template = (
           <VuiBox
@@ -161,7 +162,21 @@ function Table({ columns = [], rows = [{}] }) {
             </VuiBox>
           </VuiBox>
         );
+      } else if (React.isValidElement(cellData)) {
+        // Handle JSX elements
+        template = (
+          <VuiBox
+            key={uuidv4()}
+            component="td"
+            p={1}
+            textAlign={align}
+            borderBottom={row.hasBorder ? `${borderWidth[1]} solid ${grey[700]}` : null}
+          >
+            {cellData}
+          </VuiBox>
+        );
       } else {
+        // Handle primitive values
         template = (
           <VuiBox
             key={uuidv4()}
