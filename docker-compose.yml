@@ -1,0 +1,10 @@
+services:
+  frontend:
+    build:
+      context: ./vision-ui-dashboard-react
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./vision-ui-dashboard-react:/app
+      - /app/node_modules

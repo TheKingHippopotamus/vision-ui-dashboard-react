@@ -16,9 +16,10 @@ const { logger } = require('./utils/logger');
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
 // בדיקת טעינת המשתנים
+let isOpenAIAvailable = true;
 if (!process.env.OPENAI_API_KEY) {
-  logger.error('Missing OPENAI_API_KEY environment variable');
-  process.exit(1);
+  logger.warn('Missing OPENAI_API_KEY environment variable - AI features will be limited');
+  isOpenAIAvailable = false;
 }
 
 const app = express();
@@ -41,15 +42,15 @@ app.use(cors({
 
 app.use(express.json());
 
-// אתחול OpenAI
-const openai = new OpenAI({
+// אתחול OpenAI רק אם יש מפתח
+const openai = isOpenAIAvailable ? new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
-});
+}) : null;
 
 // Utility Functions
 const calculateTokens = async (completion) => {
+  if (!isOpenAIAvailable) return null;
   try {
-    // במקום לבדוק את השימוש הכללי, נבדוק את הטוקנים של התשובה הנוכחית
     return {
       total: completion.usage.total_tokens,
       prompt_tokens: completion.usage.prompt_tokens,
@@ -65,6 +66,11 @@ const processRequest = async (req, res) => {
   try {
     state.activeRequests++;
     const { message, role } = req.body;
+
+    // אם אין OpenAI API key, נחזיר הודעה מוגדרת מראש
+    if (!isOpenAIAvailable) {
+      return `I apologize, but I am currently operating in limited mode without AI capabilities. Please try again later when the service is fully operational. In the meantime, I can still assist you with basic information about ${role}.`;
+    }
 
     const completion = await openai.chat.completions.create({
       model: "gpt-3.5-turbo",
